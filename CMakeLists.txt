@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.6)
+project(briquette)
+enable_language(CUDA)
+add_compile_options()
+add_executable(briquette src/briquette.cu)
+install(TARGETS briquette DESTINATION /usr/bin)
