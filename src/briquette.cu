@@ -160,17 +160,17 @@ int main()
                            problem_size / threadsPerBlock.y + 1,
                            problem_size / threadsPerBlock.z + 1);
 
-            file_out << "Температура воздуха:" << bound_val << "°C "
-                     << "Размер стороны брикета:" << i * 0.01 << "м" << endl;
-            file_out << "Время(часы)\tМаксимальная температура брикета(°C)" << endl;
+            file_out << "Air temperature:" << bound_val << "C "
+                     << "Briquette side size:" << i * 0.01 << "m" << endl;
+            file_out << "Time(hours)\tMaximum temperature of the briquette(C)" << endl;
 
-            init<<<numBlocks, threadsPerBlock>>>(heat_array_old);
-            init<<<numBlocks, threadsPerBlock>>>(heat_array_now);
+            init<<<numBlocks, threadsPerBlock> > >(heat_array_old);
+            init<<<numBlocks, threadsPerBlock> > >(heat_array_now);
 
             double centre = 0;
 
             for (int time = 0; time <= 8 / dt; time++) {
-                solve<<<numBlocks, threadsPerBlock>>>(heat_array_now, heat_array_old);
+                solve<<<numBlocks, threadsPerBlock> > >(heat_array_now, heat_array_old);
 
                 double *tmp = heat_array_now;
                 heat_array_now = heat_array_old;
