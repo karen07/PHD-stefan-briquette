@@ -164,13 +164,13 @@ int main()
                      << "Briquette side size:" << i * 0.01 << "m" << endl;
             file_out << "Time(hours)\tMaximum temperature of the briquette(C)" << endl;
 
-            init<<<numBlocks, threadsPerBlock> > >(heat_array_old);
-            init<<<numBlocks, threadsPerBlock> > >(heat_array_now);
+            init<<<numBlocks, threadsPerBlock>>>(heat_array_old);
+            init<<<numBlocks, threadsPerBlock>>>(heat_array_now);
 
             double centre = 0;
 
             for (int time = 0; time <= 8 / dt; time++) {
-                solve<<<numBlocks, threadsPerBlock> > >(heat_array_now, heat_array_old);
+                solve<<<numBlocks, threadsPerBlock>>>(heat_array_now, heat_array_old);
 
                 double *tmp = heat_array_now;
                 heat_array_now = heat_array_old;
