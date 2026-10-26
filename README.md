@@ -1,16 +1,17 @@
 # PHD Stefan briquette
 
-This repository contains a CUDA solver for a three-dimensional Stefan problem in a single briquette geometry.
-
-The code models transient heat transfer with temperature-dependent material properties and an effective latent-heat term around the freezing point. The finite-difference update is executed on the GPU over a regular 3D grid.
-
-The project is research code rather than a general simulation package: experiment parameters are defined directly in the source, and results are written as a text summary together with VTK snapshots for later visualization.
+A CUDA solver for a three-dimensional Stefan problem in a single-briquette geometry. It
+models transient heat transfer and phase change on a regular grid using GPU-based finite
+differences.
 
 ## Описание
 
-Этот репозиторий содержит CUDA решатель трехмерной задачи Стефана для геометрии с одним брикетом.
+CUDA-решатель трёхмерной задачи Стефана для геометрии с одним брикетом. Моделирует
+нестационарный перенос тепла и фазовый переход на регулярной сетке с использованием метода
+конечных разностей на GPU.
 
-Код моделирует нестационарный теплоперенос с зависящими от температуры свойствами материала и эффективным учетом скрытой теплоты вблизи точки замерзания. Конечно-разностное обновление выполняется на GPU по регулярной трехмерной сетке.
+Модель учитывает зависящие от температуры свойства материала и скрытую теплоту вблизи точки
+замерзания.
 
 Это исследовательский код, а не универсальный пакет моделирования: параметры эксперимента задаются непосредственно в исходниках, а результаты сохраняются в виде текстовой сводки и снимков VTK для последующей визуализации.
 
